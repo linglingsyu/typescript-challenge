@@ -6,4 +6,17 @@
  */
 
 // 請在下方寫下你的程式碼
-
+import fetch from 'node-fetch';
+export function fetchData(url: string): Promise<any> {
+  // 請在此處寫下你的程式碼
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
